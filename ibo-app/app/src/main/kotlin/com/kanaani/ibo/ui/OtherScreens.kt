@@ -114,7 +114,7 @@ fun AccountScreen(x: Xtream) {
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Logo(52.dp)
+                        Logo(40.dp)
                         Spacer(Modifier.width(14.dp))
                         Column {
                             Label(x.username, 20.sp, weight = FontWeight.Bold)

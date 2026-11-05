@@ -69,9 +69,7 @@ fun AdCarousel(slides: List<com.kanaani.ibo.data.Slide>, modifier: Modifier, cor
         if (slides.isEmpty()) {
             // Rien à montrer (pas encore chargé) : logo de la marque.
             Row(Modifier.align(Alignment.Center), verticalAlignment = Alignment.CenterVertically) {
-                Logo(72.dp)
-                Spacer(Modifier.width(14.dp))
-                Text(Brand.name, color = C.text, fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 30.sp)
+                Logo(80.dp)
             }
         } else {
             Crossfade(slides[index.coerceIn(0, slides.lastIndex)], animationSpec = tween(800), label = "ad") { s ->
@@ -126,11 +124,7 @@ fun billboardSlides(ads: List<String>, movies: List<com.kanaani.ibo.data.Slide>,
 private fun ThemeHeader(now: Long, logo: Dp = 54.dp) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         Logo(logo)
-        Spacer(Modifier.width(12.dp))
-        Column(Modifier.weight(1f)) {
-            Text(Brand.name, color = C.text, fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 26.sp, maxLines = 1)
-            Label(Str.welcome, 14.sp, C.text2, FontWeight.SemiBold)
-        }
+        Spacer(Modifier.weight(1f))
         Column(horizontalAlignment = Alignment.End) {
             Text(clock(now), color = C.text, fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 24.sp, maxLines = 1)
             Label(date(now, "EEEE d MMMM"), 11.sp, C.text2)

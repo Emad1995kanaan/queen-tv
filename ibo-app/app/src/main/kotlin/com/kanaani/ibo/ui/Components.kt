@@ -139,7 +139,8 @@ fun Tile(
 /** Logo de la marque (pastille carrée). */
 @Composable
 fun Logo(size: Dp) {
-    Image(painterResource(R.drawable.brand_mark), contentDescription = null, modifier = Modifier.size(size))
+    // Logo QUEEN TV tel quel (« Queen TV » sur une ligne) : largeur ≈ 4,7 × la hauteur.
+    Image(painterResource(R.drawable.brand_mark), contentDescription = null, modifier = Modifier.height(size).width(size * 4.7f))
 }
 
 /** En-tête d'écran : logo, titre, heure. */
@@ -148,8 +149,8 @@ fun Header(title: String, modifier: Modifier = Modifier, trailing: @Composable (
     var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
     LaunchedEffect(Unit) { while (true) { now = System.currentTimeMillis(); delay(60_000L - now % 60_000L) } }
     Row(modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        Logo(40.dp)
-        Spacer(Modifier.width(14.dp))
+        Logo(34.dp)
+        Spacer(Modifier.width(16.dp))
         Text(title, color = C.text, fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 26.sp, maxLines = 1,
             overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
         trailing()

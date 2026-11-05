@@ -84,10 +84,8 @@ fun LoginScreen() {
         ) {
             if (!keyboard) {
                 Column(Modifier.weight(1f).fillMaxHeight(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-                    Logo(190.dp)
-                    Spacer(Modifier.height(18.dp))
-                    Text(Brand.name, color = C.text, fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 32.sp, maxLines = 1)
-                    Spacer(Modifier.height(6.dp))
+                    Logo(80.dp)
+                    Spacer(Modifier.height(16.dp))
                     Label(Str.tagline, 14.sp, C.text2)
                 }
                 Spacer(Modifier.width(36.dp))
