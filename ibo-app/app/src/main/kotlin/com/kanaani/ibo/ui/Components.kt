@@ -131,7 +131,8 @@ fun Tile(
             .scale(if (focused) focusScale else 1f)
             .clip(shape)
             .background(if (bg.size > 1) Brush.linearGradient(bg) else SolidColor(bg.first()))
-            .then(if (focused) Modifier.border(3.dp, C.focus, shape) else Modifier)
+            // Cadre de focus : blanc, sauf sur une tuile blanche (Films) où il est vert.
+            .then(if (focused) Modifier.border(3.dp, if (bg.firstOrNull() == Color(0xFFFFFFFF)) C.accent else C.focus, shape) else Modifier)
             .clickable(interactionSource = interaction, indication = null, onClick = onClick),
     ) { content(focused) }
 }
